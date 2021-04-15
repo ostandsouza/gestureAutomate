@@ -95,7 +95,7 @@ class _SwipeState extends State<Swipe> {
                             ),
                           ),
                           Padding(
-                          padding: const EdgeInsets.fromLTRB(50,0.0,50,0.0),
+                          padding: const EdgeInsets.fromLTRB(50,0.0,0,0.0),
                           child: Center(
                             child: Text("Swipe", 
                             style:TextStyle(color: Colors.white, fontSize: 40,

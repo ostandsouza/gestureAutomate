@@ -49,7 +49,7 @@ class _TapState extends State<Tap> {
                           ),
                           
                           Padding(
-                            padding: const EdgeInsets.fromLTRB(50,0.0,50,0.0),
+                            padding: const EdgeInsets.fromLTRB(50,0.0,0,0.0),
                             child: Center(
                               child: Text("Tap", 
                               textAlign: TextAlign.center,
@@ -62,18 +62,21 @@ class _TapState extends State<Tap> {
                   ]),
                 ),
               ),
-               Expanded(child: Transform.scale(
-                        scale: 3,
-                        child: CupertinoSwitch(
-                        value: status,
-                        onChanged: (value) {
-                          print("VALUE : $value");
-                          setState(() {
-                            status = value;
-                          });
-                          _showToast(context);
-                        }
-                  ),
+               Expanded(child: Semantics(
+                          label: 'switch',
+                          child: Transform.scale(
+                          scale: 3,
+                          child: CupertinoSwitch(
+                          value: status,
+                          onChanged: (value) {
+                            print("VALUE : $value");
+                            setState(() {
+                              status = value;
+                            });
+                            _showToast(context);
+                          }
+                    ),
+                 ),
                ))
             ]
           

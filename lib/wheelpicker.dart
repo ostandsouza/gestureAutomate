@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gesture_automate/shared/Clipper.dart';
@@ -9,6 +11,7 @@ class Wheelpicker extends StatefulWidget {
 
 class _WheelpickerState extends State<Wheelpicker> {
   DateTime datetime = DateTime.now();
+  int selected;
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +66,7 @@ class _WheelpickerState extends State<Wheelpicker> {
                   ),
                 ),
                 SizedBox(
-                height:MediaQuery.of(context).size.height/5,
+                height:MediaQuery.of(context).size.height/15,
               ),
               Container(
                 child: buildDatePicker(),
@@ -76,7 +79,8 @@ class _WheelpickerState extends State<Wheelpicker> {
     );
   }
 
-  Widget buildDatePicker() => SizedBox(
+  Widget buildDatePicker() {
+  if (Platform.isIOS){ return SizedBox(
       height: 200,
       child: CupertinoDatePicker(
       minimumYear: 2010,
@@ -86,5 +90,24 @@ class _WheelpickerState extends State<Wheelpicker> {
       onDateTimeChanged: (dateTime) =>
        setState(() => this.datetime = datetime),
        ),
+      );
+    }
+    else if(Platform.isAndroid){return SizedBox(
+      height: 500,
+      child: CupertinoPicker(
+      itemExtent: 45,
+      backgroundColor: Colors.white,
+      onSelectedItemChanged: (int i) =>
+       setState(() => this.selected = i),
+      children: <Widget>[
+          Text("Apple",style:TextStyle(color:selected ==0?Colors.blue:Colors.black)),
+          Text("Facebook",style:TextStyle(color:selected ==1?Colors.blue:Colors.black)),
+          Text("Amazon",style:TextStyle(color:selected ==2?Colors.blue:Colors.black)),
+          Text("Google",style:TextStyle(color:selected ==3?Colors.blue:Colors.black)),
+          Text("Microsoft",style:TextStyle(color:selected ==4?Colors.blue:Colors.black)),
+      ],
+       ),
     );
+    }
+  }
 }

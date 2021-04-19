@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:gesture_automate/shared/Clipper.dart';
 
 class Tap extends StatefulWidget {
@@ -66,7 +67,7 @@ class _TapState extends State<Tap> {
                           label: 'switch',
                           child: Transform.scale(
                           scale: 3,
-                          child: CupertinoSwitch(
+                          child: PlatformSwitch(
                           value: status,
                           onChanged: (value) {
                             print("VALUE : $value");

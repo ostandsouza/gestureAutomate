@@ -76,25 +76,28 @@ class _SliderbarState extends State<Sliderbar> {
                         ),  
                         new Expanded(  
                             child: SliderTheme(
-                            data: SliderThemeData(
-                            thumbShape: RoundSliderThumbShape(enabledThumbRadius: 10)),
-                            child: Slider(  
-                            semanticFormatterCallback: (double newValue) {
-                            return 'slide';
-                            },
+                            data: SliderTheme.of(context).copyWith(
+                              trackHeight: 15,
+                              minThumbSeparation: 100,
+                              rangeThumbShape: RoundRangeSliderThumbShape(
+                                enabledThumbRadius:10,
+                                disabledThumbRadius:10
+                              )
+                            ),
+                            child: Slider.adaptive(  
                             value: _value.toDouble(),  
                             min: 0.0,  
                             max: 100.0,  
                             divisions: 10,  
                             activeColor: Colors.indigo,  
-                            inactiveColor: Colors.orange,  
+                            // inactiveColor: Colors.orange,  
                             label: _value.round().toString(),  
                             onChanged: (double newValue) {  
                               setState(() {  
                                 _value = newValue.round();  
                                 });  
                               },  
-                              onChangeEnd:(double newValue){_showToast(context);},
+                            onChangeEnd:(double newValue){_showToast(context);},
                             ),
                             )  
                         ),

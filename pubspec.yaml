@@ -33,6 +33,7 @@ dependencies:
   vector_math: ^2.1.0
   carousel_slider: ^3.0.0
   flutter_platform_widgets: ^1.2.0
+  webview_flutter: ^2.0.4
 
 dev_dependencies:
   flutter_test:

@@ -5,7 +5,7 @@ class CustomTile extends StatelessWidget {
   final String phone;
   final String imageurl;
 
-  CustomTile(this.name,this.phone,this.imageurl);
+  CustomTile(this.name, this.phone, this.imageurl);
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +21,11 @@ class CustomTile extends StatelessWidget {
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-        Text(
-          name,
-          style: TextStyle(fontWeight: FontWeight.bold)
-        ),
-        SizedBox(height:4),
-        Text(phone)
-      ],),
+          Text(name, style: TextStyle(fontWeight: FontWeight.bold)),
+          SizedBox(height: 4),
+          Text(phone)
+        ],
+      ),
     );
   }
 }

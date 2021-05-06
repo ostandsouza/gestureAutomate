@@ -14,6 +14,7 @@ import 'package:gesture_automate/wheelpicker.dart';
 import 'package:gesture_automate/zoom.dart';
 
 import '../landing.dart';
+import '../timer.dart';
 
 class AppRouter {
   Route onGenerateRoute(RouteSettings settings) {
@@ -73,6 +74,10 @@ class AppRouter {
       case '/hybrid':
         return MaterialPageRoute(
           builder: (context) => Webview(),
+        );
+      case '/timer':
+        return MaterialPageRoute(
+          builder: (context) => Alarm(),
         );
       default:
         return _errorRoute();

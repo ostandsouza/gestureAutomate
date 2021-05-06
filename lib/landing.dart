@@ -9,6 +9,7 @@ import 'package:gesture_automate/singlecell.dart';
 import 'package:gesture_automate/slider.dart';
 import 'package:gesture_automate/swipe.dart';
 import 'package:gesture_automate/tap.dart';
+import 'package:gesture_automate/timer.dart';
 import 'package:gesture_automate/webview.dart';
 import 'package:gesture_automate/webviewDS.dart';
 import 'package:gesture_automate/webviewEN.dart';
@@ -56,6 +57,10 @@ class Landing extends StatelessWidget {
     {
       "text": "Drag n Drop",
       "image": "assets/Drag-drop-icon.jpeg",
+    },
+    {
+      "text": "Timer",
+      "image": "assets/alarm.png",
     },
     {
       "text": "Web True",
@@ -170,5 +175,7 @@ class Landing extends StatelessWidget {
       Navigator.push(ctx, MaterialPageRoute(builder: (context) => WebviewD()));
     else if (text.contains("Hybrid"))
       Navigator.push(ctx, MaterialPageRoute(builder: (context) => Webview()));
+    else if (text.contains("Timer"))
+      Navigator.push(ctx, MaterialPageRoute(builder: (context) => Alarm()));
   }
 }

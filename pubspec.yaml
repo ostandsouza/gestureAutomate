@@ -34,9 +34,15 @@ dependencies:
   carousel_slider: ^3.0.0
   flutter_platform_widgets: ^1.2.0
   webview_flutter: ^2.0.4
+  razorpay_flutter: ^1.2.3
+  wavenet: ^2.0.5
+  audioplayers: ^1.0.1 
 
 dev_dependencies:
+  test: any
   flutter_test:
+    sdk: flutter
+  flutter_driver:
     sdk: flutter
 
 # For information on the generic Dart part of this file, see the

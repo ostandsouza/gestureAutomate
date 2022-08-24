@@ -13,7 +13,9 @@ import 'package:gesture_automate/webviewEN.dart';
 import 'package:gesture_automate/wheelpicker.dart';
 import 'package:gesture_automate/zoom.dart';
 
+import '../flutterWrapper.dart';
 import '../landing.dart';
+import '../speech.dart';
 import '../timer.dart';
 
 class AppRouter {
@@ -78,6 +80,14 @@ class AppRouter {
       case '/timer':
         return MaterialPageRoute(
           builder: (context) => Alarm(),
+        );
+      case '/wrapper':
+        return MaterialPageRoute(
+          builder: (context) => MyHomePage(),
+        );
+      case '/speech':
+        return MaterialPageRoute(
+          builder: (context) => Speech(),
         );
       default:
         return _errorRoute();

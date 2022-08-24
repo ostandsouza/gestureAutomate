@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:gesture_automate/carousel.dart';
 import 'package:gesture_automate/doubletap.dart';
 import 'package:gesture_automate/drag.dart';
+import 'package:gesture_automate/flutterWrapper.dart';
 import 'package:gesture_automate/longpress.dart';
 import 'package:gesture_automate/scroll.dart';
 import 'package:gesture_automate/shared/Clipper.dart';
 import 'package:gesture_automate/singlecell.dart';
 import 'package:gesture_automate/slider.dart';
+import 'package:gesture_automate/speech.dart';
 import 'package:gesture_automate/swipe.dart';
 import 'package:gesture_automate/tap.dart';
 import 'package:gesture_automate/timer.dart';
@@ -73,6 +75,14 @@ class Landing extends StatelessWidget {
     {
       "text": "Hybrid",
       "image": "assets/hybrid.png",
+    },
+    {
+      "text": "Wrapper",
+      "image": "assets/wrapper.png",
+    },
+    {
+      "text": "Speech",
+      "image": "assets/speech.png",
     },
     {
       "text": "",
@@ -177,5 +187,10 @@ class Landing extends StatelessWidget {
       Navigator.push(ctx, MaterialPageRoute(builder: (context) => Webview()));
     else if (text.contains("Timer"))
       Navigator.push(ctx, MaterialPageRoute(builder: (context) => Alarm()));
+    else if (text.contains("Wrapper"))
+      Navigator.push(
+          ctx, MaterialPageRoute(builder: (context) => MyHomePage()));
+    else if (text.contains("Speech"))
+      Navigator.push(ctx, MaterialPageRoute(builder: (context) => Speech()));
   }
 }

@@ -123,6 +123,7 @@ class Landing extends StatelessWidget {
               Center(
                 child: Text(
                   "Gestures",
+                  key: ValueKey('gesture'),
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 40,
@@ -134,25 +135,30 @@ class Landing extends StatelessWidget {
         ),
         Container(
           height: MediaQuery.of(context).size.height / 1.1,
-          child: GridView.count(
-            scrollDirection: Axis.vertical,
-            crossAxisCount: 2,
-            childAspectRatio: 1.0,
-            mainAxisSpacing: 4.0,
-            crossAxisSpacing: 4.0,
-            children: data.map((val) {
-              return GestureDetector(
-                child: GridTile(
-                    // width: double.infinity,
-                    // height: double.infinity,
-                    child: SingleCell(val["text"], val["image"])),
-                onTap: () {
-                  cellClick(context, val["text"]);
-                },
-              );
-            }).toList(),
-          ),
-        )
+          child: 
+          Semantics(
+              label: 'listElements',
+              child:GridView.count(
+              key: ValueKey('listview'),
+              scrollDirection: Axis.vertical,
+              crossAxisCount: 2,
+              childAspectRatio: 1.0,
+              mainAxisSpacing: 4.0,
+              crossAxisSpacing: 4.0,
+              children: data.map((val) {
+                return GestureDetector(
+                  child: GridTile(
+                      // width: double.infinity,
+                      // height: double.infinity,
+                  child: SingleCell(val["text"], val["image"])),
+                  key: ValueKey(val["text"] + "_Key"),
+                  onTap: () {
+                    cellClick(context, val["text"]);
+                  },
+                );
+              }).toList(),
+            ),
+        ))
       ],
     ))));
   }

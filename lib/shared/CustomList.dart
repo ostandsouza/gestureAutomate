@@ -21,7 +21,9 @@ class CustomTile extends StatelessWidget {
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(name, style: TextStyle(fontWeight: FontWeight.bold)),
+          Text(name,
+              style: TextStyle(fontWeight: FontWeight.bold),
+              key: ValueKey(name + '_Key')),
           SizedBox(height: 4),
           Text(phone)
         ],

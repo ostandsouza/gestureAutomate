@@ -84,7 +84,8 @@ class _SliderbarState extends State<Sliderbar> {
                                 disabledThumbRadius:10
                               )
                             ),
-                            child: Slider.adaptive(  
+                            child: Slider.adaptive(
+                            key : ValueKey('slide'),  
                             value: _value.toDouble(),  
                             min: 0.0,  
                             max: 100.0,  

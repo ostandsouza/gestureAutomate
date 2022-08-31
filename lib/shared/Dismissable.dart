@@ -8,31 +8,32 @@ class DismissableWidget<T> extends StatelessWidget {
   final Widget child;
   final DismissDirectionCallback onDismissed;
 
-  DismissableWidget({@required this.item, 
-  @required this.index, 
-  @required this.child, 
-  @required this.onDismissed,
-  Key key,
-  }): super(key:key);
+
+  DismissableWidget({
+    @required this.item,
+    @required this.index,
+    @required this.child,
+    @required this.onDismissed,
+    Key key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Dismissible(
       direction: DismissDirection.endToStart,
-      key:ValueKey(item[index]),
+      key: ValueKey(item[index]),
       background: buildSwipeRight(),
       child: child,
       onDismissed: onDismissed,
     );
- 
   }
 
   Widget buildSwipeRight() => Container(
-    alignment: Alignment.centerRight,
-    padding: EdgeInsets.symmetric(
-      horizontal: 20,),
-      color: Colors.red,
-      child: Icon(FontAwesomeIcons.trashAlt, color: Colors.white, size: 32),
-    );
-
+        alignment: Alignment.centerRight,
+        padding: EdgeInsets.symmetric(
+          horizontal: 20,
+        ),
+        color: Colors.red,
+        child: Icon(FontAwesomeIcons.trashAlt, color: Colors.white, size: 32),
+      );
 }

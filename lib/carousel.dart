@@ -87,6 +87,7 @@ class _CarouselState extends State<Carousel> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     CarouselSlider(
+                        key: ValueKey('carouselList'),
                         options: CarouselOptions(
                         height: 400.0,
                         initialPage: 0,

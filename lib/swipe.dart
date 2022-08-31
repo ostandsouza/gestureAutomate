@@ -105,12 +105,14 @@ class _SwipeState extends State<Swipe> {
           ),
           Expanded(
             child: ListView.separated(
+                key: ValueKey('messageList'),
                 itemCount: data.length,
                 separatorBuilder: (context, index) => Divider(),
                 itemBuilder: (context, index) {
                   print("data ${data.length}");
                   final item = data[index];
                   return DismissableWidget(
+                      key: ValueKey(item["name"] + '_Msg'),
                       item: data,
                       index: index,
                       child: CustomTile(
@@ -131,6 +133,16 @@ class _SwipeState extends State<Swipe> {
 
     switch (direction) {
       case DismissDirection.endToStart:
+        ScaffoldMessenger.of(ctx).showSnackBar(SnackBar(
+          content: const Text('Chat deleted Successful'),
+          duration: const Duration(seconds: 1),
+          action: SnackBarAction(
+            label: 'Success',
+            onPressed: () {},
+          ),
+        ));
+        break;
+      case DismissDirection.startToEnd:
         ScaffoldMessenger.of(ctx).showSnackBar(SnackBar(
           content: const Text('Chat deleted Successful'),
           duration: const Duration(seconds: 1),

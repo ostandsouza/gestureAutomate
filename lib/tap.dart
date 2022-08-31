@@ -69,6 +69,7 @@ class _TapState extends State<Tap> {
                           scale: 3,
                           child: PlatformSwitch(
                           value: status,
+                          key: Key('toggle'),
                           onChanged: (value) {
                             print("VALUE : $value");
                             setState(() {

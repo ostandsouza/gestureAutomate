@@ -6,15 +6,25 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath 'com.android.tools.build:gradle:7.2.2'
+        // classpath 'com.android.tools.build:gradle:3.0.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'org.jacoco:org.jacoco.core:0.8.5'
+        classpath 'org.jacoco:org.jacoco.agent:0.8.5'
+        classpath 'com.palantir:jacoco-coverage:0.4.0'
     }
+}
+
+plugins {
+    id 'jacoco'
 }
 
 allprojects {
     repositories {
         google()
         jcenter()
+        mavenLocal()
+        maven { url "https://plugins.gradle.org/m2/" }
     }
 }
 

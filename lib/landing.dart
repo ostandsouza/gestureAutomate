@@ -3,6 +3,7 @@ import 'package:gesture_automate/carousel.dart';
 import 'package:gesture_automate/doubletap.dart';
 import 'package:gesture_automate/drag.dart';
 import 'package:gesture_automate/flutterWrapper.dart';
+import 'package:gesture_automate/forms.dart';
 import 'package:gesture_automate/longpress.dart';
 import 'package:gesture_automate/scroll.dart';
 import 'package:gesture_automate/shared/Clipper.dart';
@@ -79,6 +80,14 @@ class Landing extends StatelessWidget {
     {
       "text": "Wrapper",
       "image": "assets/wrapper.png",
+    },
+    {
+      "text": "Speech",
+      "image": "assets/speech.png",
+    },
+    {
+      "text": "Forms",
+      "image": "assets/forms.png",
     },
     {
       "text": "Speech",
@@ -198,5 +207,7 @@ class Landing extends StatelessWidget {
           ctx, MaterialPageRoute(builder: (context) => MyHomePage()));
     else if (text.contains("Speech"))
       Navigator.push(ctx, MaterialPageRoute(builder: (context) => Speech()));
+    else if (text.contains("Forms"))
+      Navigator.push(ctx, MaterialPageRoute(builder: (context) => Forms()));
   }
 }

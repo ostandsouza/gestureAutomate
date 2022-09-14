@@ -64,6 +64,7 @@ class _AlarmState extends State<Alarm> {
                         alignment: Alignment.topLeft,
                         child: IconButton(
                           icon: Icon(Icons.arrow_back),
+                          tooltip: 'Back',
                           color: Colors.white,
                           onPressed: () => Navigator.pop(context, false),
                         ),
@@ -93,7 +94,8 @@ class _AlarmState extends State<Alarm> {
           Container(
             alignment: Alignment.center,
             child: Text(getText(),
-                style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w700)),
+                style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w700),
+                key: ValueKey('clock_Key')),
           ),
           Semantics(
             label: 'clock',

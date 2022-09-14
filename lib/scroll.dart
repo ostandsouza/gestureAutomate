@@ -18,12 +18,12 @@ class Scroll extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    //   appBar: AppBar(
-    //       title: Text("scroll"),
-    //     ),
-    //     body: SafeArea( 
-    //     child: Column(children: <Widget>[
-    // Scaffold(
+      //   appBar: AppBar(
+      //       title: Text("scroll"),
+      //     ),
+      //     body: SafeArea(
+      //     child: Column(children: <Widget>[
+      // Scaffold(
       body: SafeArea(
         child: Column(children: <Widget>[
           ClipPath(
@@ -53,6 +53,7 @@ class Scroll extends StatelessWidget {
                         alignment: Alignment.topLeft,
                         child: IconButton(
                           icon: Icon(Icons.arrow_back),
+                          tooltip: 'Back',
                           color: Colors.white,
                           onPressed: () => Navigator.pop(context, false),
                         ),

@@ -43,7 +43,8 @@ class _TapState extends State<Tap> {
                            padding: const EdgeInsets.fromLTRB(0,0.0,0,0.0),
                             child: Align(
                               alignment: Alignment.topLeft,
-                              child: IconButton(icon: Icon(Icons.arrow_back), 
+                              child: IconButton(icon: Icon(Icons.arrow_back),
+                                tooltip: 'Back', 
                                 color: Colors.white,
                                 onPressed:() => Navigator.pop(context, false),),
                             ),

@@ -68,7 +68,8 @@ class _DragState extends State<Drag> {
                              padding: const EdgeInsets.fromLTRB(0,0.0,0,0.0),
                               child: Align(
                                 alignment: Alignment.topLeft,
-                                child: IconButton(icon: Icon(Icons.arrow_back), 
+                                child: IconButton(icon: Icon(Icons.arrow_back),
+                                tooltip: 'Back', 
                                   color: Colors.white,
                                   onPressed:() => Navigator.pop(context, false),),
                               ),
@@ -91,11 +92,13 @@ class _DragState extends State<Drag> {
                     height:MediaQuery.of(context).size.height/15,
                   ),
                 Container(
+                key: ValueKey('Drag_View'),
                 child: Row(children: [
                 Column(children: data.map((e){
                 return Container(
                 margin: const EdgeInsets.all(20.0),
                 child: Draggable<ItemModel>(
+                key: ValueKey(e.name+'_Key'),
                 data: e,
                 childWhenDragging: Icon(e.icon ,color: Colors.grey, size: 50,),
                 feedback: Icon(e.icon ,color: Colors.red, size: 50,),

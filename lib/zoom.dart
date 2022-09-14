@@ -45,6 +45,7 @@ class _ZoomState extends State<Zoom> {
                               child: Align(
                                 alignment: Alignment.topLeft,
                                 child: IconButton(icon: Icon(Icons.arrow_back), 
+                                  tooltip: 'Back',
                                   color: Colors.white,
                                   onPressed:() => Navigator.pop(context, false),),
                               ),

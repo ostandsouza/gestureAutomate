@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gesture_automate/carousel.dart';
 import 'package:gesture_automate/doubletap.dart';
 import 'package:gesture_automate/drag.dart';
+import 'package:gesture_automate/forms.dart';
 import 'package:gesture_automate/longpress.dart';
 import 'package:gesture_automate/scroll.dart';
 import 'package:gesture_automate/slider.dart';
@@ -88,6 +89,10 @@ class AppRouter {
       case '/speech':
         return MaterialPageRoute(
           builder: (context) => Speech(),
+        );
+      case '/forms':
+        return MaterialPageRoute(
+          builder: (context) => Forms(),
         );
       default:
         return _errorRoute();

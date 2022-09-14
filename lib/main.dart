@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:gesture_automate/finders/finders_extension.dart';
 import 'package:gesture_automate/shared/AppRouter.dart';
 import 'package:flutter_driver/driver_extension.dart';
 
 void main() {
-  enableFlutterDriverExtension();
+  // enableFlutterDriverExtension(
+  //     commands: [FloatingActionButtonCommandExtension()],
+  //     finders: [FloatingActionButtonFinderExtension()]);
   runApp(MyApp());
 }
 
